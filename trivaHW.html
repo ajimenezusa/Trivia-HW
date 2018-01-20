@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang='en-us'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>triva</title>
+    <!-- Bootstrap CDN -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
+
+    <link rel="stylesheet" type="text/css" href="trivahw.css">
+  </head>
+  <body>
+    
+    <div class='container'>
+      <div class = "one">
+        <h1>Triva Game</h1>
+      </div>
+         <div id="show-number">
+        </div>
+    </div>
+      
+      <!-- Game counters held here. Panels are being used to hold various sections. -->
+      <div class='row'>
+        <div class='col-lg-12'> 
+         <div id="buttons">
+            <!-- <button id="start">Start</button> -->
+            <button id="stop">Stop</button>
+            
+         </div>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-5">
+          <h4> What is Jalisa's favorite animal</h4>
+            <ol>
+            <li>
+              <div class="form-group">
+               <input type="checkbox" class="filled-in" id="checkbox101">
+                <label for="checkbox101">Pigs</label>
+              </div>
+            </li>
+              <li>
+                <div class="form-group">
+                 <input type="checkbox" class="filled-in" id="checkbox101" >
+                  <label for="checkbox101">Monkeys</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-group">
+                  <input type="checkbox" class="filled-in" id="checkbox101">
+                     <label for="checkbox101">Armadilla</label>
+                </div>
+              </li>
+            </ol>
+
+        </div>
+        <div class="col-lg-5">
+          <h4> What is Jalisa's favorite color?</h4>
+            <ol>
+            <li>
+              <div class="form-group">
+               <input type="checkbox" class="filled-in" id="checkbox101">
+                <label for="checkbox101">Orange</label>
+              </div>
+            </li>
+              <li>
+                <div class="form-group">
+                 <input type="checkbox" class="filled-in" id="checkbox101" >
+                  <label for="checkbox101">Blue</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-group">
+                  <input type="checkbox" class="filled-in" id="checkbox101">
+                     <label for="checkbox101">Green</label>
+                </div>
+              </li>
+            </ol>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class ="col-lg-5">
+          <h4> What is Jalisa's favorite food</h4>
+            <ol>
+            <li>
+              <div class="form-group">
+               <input type="checkbox" class="filled-in" id="checkbox101">
+                <label for="checkbox101">Mexican Food</label>
+              </div>
+            </li>
+              <li>
+                <div class="form-group">
+                 <input type="checkbox" class="filled-in" id="checkbox101" >
+                  <label for="checkbox101">Italian Food</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-group">
+                  <input type="checkbox" class="filled-in" id="checkbox101">
+                     <label for="checkbox101">Sea Food</label>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="col-lg-5">
+            <h4>What is Jalisa's favorite drink?</h4>
+            <ol>
+            <li>
+              <div class="form-group">
+               <input type="checkbox" class="filled-in" id="checkbox101">
+                <label for="checkbox101">Water</label>
+              </div>
+            </li>
+              <li>
+                <div class="form-group">
+                 <input type="checkbox" class="filled-in" id="checkbox101" >
+                  <label for="checkbox101">Sprite</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-group">
+                  <input type="checkbox" class="filled-in" id="checkbox101">
+                     <label for="checkbox101">Rootbeer</label>
+                </div>
+              </li>
+            </ol>
+            </div>
+          </div>
+
+          
+
+      
+    <!-- Adds a link to the JavaScript file. Loaded at the bottom so it waits for the HTML content to display first. If you put this at the top it will crash, because the HTML IDs won't exist yet.-->
+
+  </body>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+ var number = 0;
+
+ var intervalId;
+
+ $("#stop").on("click", stop);
+
+
+ function start () {
+  clearInterval(intervalId);
+  intervalId= setInterval(increment, 1000);
+ }
+
+ function increment () {
+
+  number++;
+
+  $('#show-number').html('<h2>' +number + '<h2>');
+
+  if (number ===30) {
+    stop();
+    console.log("Times Up!");
+  }
+}
+  function stop() {
+    clearInterval(intervalId);
+    alert("Times Up. Record your time")
+
+  }
+
+ start();
+
+   
+  
+</script>
+
+
+<!-- 
+//  // Show clock
+// 2. Clock start running as soon as page loads
+// 3. Clock to prompt/alert once times runs out
+// 4. Create questions
+// 5. Determine whether answer is correct or incorrect --> 
